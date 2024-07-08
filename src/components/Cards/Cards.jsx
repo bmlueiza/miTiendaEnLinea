@@ -7,11 +7,20 @@ import {
   Typography,
   Grid,
 } from "@mui/material";
-
+import { useNavigate } from "react-router-dom";
 import clp from "../clp";
-import { Link } from "react-router-dom";
 
 const Cards = ({ data, titulo }) => {
+  /* 1° useState() */
+  const navigate = useNavigate();
+
+  /* 2° constantes o funciones */
+  const handleDivClick = (key) => {
+    navigate(`/producto/${key}`);
+  };
+
+  /* 3° useEffect() */
+
   return (
     <Container sx={{ my: "20px" }}>
       <Typography variant="h1" sx={{ mt: "100px" }}>
@@ -19,8 +28,16 @@ const Cards = ({ data, titulo }) => {
       </Typography>
       <Grid container spacing={2} sx={{ mb: "20px" }}>
         {data.map((producto, index) => (
-          <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-            <Card>
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={4}
+            lg={3}
+            key={index}
+            onClick={() => handleDivClick(producto.id)}
+          >
+            <Card sx={{ cursor: "pointer" }}>
               <CardMedia
                 component="img"
                 alt={producto.nombre}
@@ -48,7 +65,6 @@ const Cards = ({ data, titulo }) => {
                   {clp(producto.nuevo_precio)}
                 </Typography>
               </CardActions>
-              <Link to={`/producto/${producto.id}`}>Ver detalle</Link>
             </Card>
           </Grid>
         ))}
