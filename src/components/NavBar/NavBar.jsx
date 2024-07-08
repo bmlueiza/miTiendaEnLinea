@@ -2,6 +2,7 @@ import "./NavBar.css";
 import logo from "../assets/logo.png";
 import cart_icon from "../assets/cart_icon.png";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   /* const [variable, funcionModificadoraDeVariable] =useState(valorInicialVariable
@@ -16,22 +17,30 @@ function NavBar() {
       </div>
       <ul className="nav-menu">
         <li onClick={() => setMenu("tienda")}>
-          Tienda
-          {/* sintaxis de operador ternario: evaluador ? siCumpleCondicion: siNoCumpleCondicion*/}
-          {/* sintaxis de operador AND: evaluador && siCumpleCondicion */}
-          {menu === "tienda" ? <hr /> : <></>}
+          <Link to="/" style={{ textDecoration: "none" }}>
+            Tienda
+            {/* sintaxis de operador ternario: evaluador ? siCumpleCondicion: siNoCumpleCondicion*/}
+            {/* sintaxis de operador AND: evaluador && siCumpleCondicion */}
+            {menu === "tienda" ? <hr /> : <></>}
+          </Link>
         </li>
         <li onClick={() => setMenu("hombre")}>
-          Hombre
-          {menu === "hombre" && <hr />}
+          <Link to="/hombre" style={{ textDecoration: "none" }}>
+            Hombre
+            {menu === "hombre" && <hr />}
+          </Link>
         </li>
         <li onClick={() => setMenu("mujer")}>
-          Mujer
-          {menu === "mujer" && <hr />}
+          <Link to="/mujer" style={{ textDecoration: "none" }}>
+            Mujer
+            {menu === "mujer" && <hr />}
+          </Link>
         </li>
         <li onClick={() => setMenu("niño")}>
-          Niños
-          {menu === "niño" && <hr />}
+          <Link to="/nino" style={{ textDecoration: "none" }}>
+            Niños
+            {menu === "niño" && <hr />}
+          </Link>
         </li>
       </ul>
       {/* div.nav-login-chart>button{Login}+img[src={cart_icon} alt="carrito"] */}
