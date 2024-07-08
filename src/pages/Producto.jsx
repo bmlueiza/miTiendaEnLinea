@@ -25,7 +25,7 @@ function Producto() {
             </Grid>
             <Grid item xs={12} sm={6} sx={{ padding: "15px" }}>
               <Typography variant="h5">
-                <b>detalle: </b>
+                <b>Detalle: </b>
                 {producto.nombre}
               </Typography>
               <Typography variant="h5" sx={{ mt: "30px" }}>
@@ -37,15 +37,15 @@ function Producto() {
                 color="textSecondary"
                 sx={{ mt: "30px" }}
               >
-                <b>precio: </b>
+                <b>Precio: </b>
                 {clp(producto.precio_anterior)}
               </Typography>
               <Typography variant="h6" color="textSecondary">
-                <b>descuento: </b>
+                <b>Descuento: </b>
                 {clp(producto.precio_anterior - producto.nuevo_precio)}
               </Typography>
               <Typography variant="h6" sx={{ mt: "30px", textAlign: "right" }}>
-                <b>descuento: </b>
+                <b>Descuento: </b>
                 {clp(producto.nuevo_precio)}
               </Typography>
               <div style={{ textAlign: "right", marginTop: "15px" }}>
