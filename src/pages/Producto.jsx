@@ -10,17 +10,21 @@ function Producto() {
 
   const { id } = useParams();
 
-  useEffect(() => {
-    const datos = data.find((prod) => prod.id == id);
-    setProducto(datos);
-  }, []);
+  /* useEffect(() => {function},[estadi a evalar] */
+  useEffect(
+    () => {
+      const datos = data.find((prod) => prod.id == id);
+      setProducto(datos);
+    },
+    [] /* si no tiene un valor, se ejecutará la primera vez de renderizado */
+  );
 
   return (
     <>
       {producto && (
         <Container>
-          <Grid container sx={{ mt: "40px" }}>
-            <Grid item xs={12} sm={6}>
+          <Grid container spacing={2} sx={{ mt: "40px" }}>
+            <Grid item xs={12} sm={6} sx={{ margin: "auto" }}>
               <img src={producto.imagen} style={{ width: "100%" }} />
             </Grid>
             <Grid item xs={12} sm={6} sx={{ padding: "15px" }}>

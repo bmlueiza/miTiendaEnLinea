@@ -3,6 +3,7 @@ import logo from "../assets/logo.png";
 import cart_icon from "../assets/cart_icon.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Drawer from "../Drawer/Drawer";
 
 function NavBar() {
   /* const [variable, funcionModificadoraDeVariable] =useState(valorInicialVariable
@@ -46,8 +47,9 @@ function NavBar() {
       {/* div.nav-login-chart>button{Login}+img[src={cart_icon} alt="carrito"] */}
       <div className="nav-login-cart">
         <button>Login</button>
-        <img src={cart_icon} alt="carrito" />
+        {/* <img src={cart_icon} alt="carrito" /> */}
       </div>
+      <Drawer />
     </div>
   );
 }
